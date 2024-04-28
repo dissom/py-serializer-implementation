@@ -20,8 +20,6 @@ def deserialize_car_object(json: bytes) -> Car:
     serializer.save()
     return serializer
 
-
-
 # if __name__ == "__main__":
 #     car_data = {
 #         "manufacturer": "OPEL",
