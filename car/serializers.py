@@ -8,10 +8,7 @@ class CarSerializer(serializers.Serializer):
     id = serializers.IntegerField(read_only=True)
     manufacturer = serializers.CharField(max_length=64)
     horse_power = serializers.IntegerField(
-        validators=[
-            MaxValueValidator(1914),
-            MinValueValidator(1)
-        ]
+        validators=[MaxValueValidator(1914), MinValueValidator(1)]
     )
     # horse_power = serializers.PositiveSmallIntegerField(
     #     validators=[MaxValueValidator(1914), MinValueValidator(1)]
@@ -26,8 +23,15 @@ class CarSerializer(serializers.Serializer):
         instance.manufacturer = validated_data.get(
             "manufacturer", instance.manufacturer
         )
-        instance.horse_power = validated_data.get("horse_power", instance.horse_power)
-        instance.is_broken = validated_data.get("is_broken", instance.is_broken)
+        instance.horse_power = validated_data.get(
+            "horse_power",
+            instance.horse_power
+        )
+        instance.is_broken = validated_data.get(
+            "is_broken",
+            instance.is_broken
+
+        )
         instance.problem_description = validated_data.get(
             "problem_description", instance.problem_description
         )
