@@ -21,7 +21,7 @@ class CarSerializer(serializers.Serializer):
             "manufacturer", instance.manufacturer
         )
         instance.horse_powers = validated_data.get(
-            "horse_power",
+            "horse_powers",
             instance.horse_powers
         )
         instance.is_broken = validated_data.get(
@@ -31,5 +31,5 @@ class CarSerializer(serializers.Serializer):
         instance.problem_description = validated_data.get(
             "problem_description", instance.problem_description
         )
-        # instance.save()
+        instance.save()
         return instance

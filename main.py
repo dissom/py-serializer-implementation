@@ -17,5 +17,18 @@ def deserialize_car_object(json: bytes) -> Car:
     data = JSONParser().parse(stream)
     serializer = CarSerializer(data=data)
     serializer.is_valid(raise_exception=True)
-    car = serializer.save()
-    return car
+    serializer.save()
+    return serializer.instance
+
+
+
+# if __name__ == "__main__":
+#     car_data = {
+#         "manufacturer": "OPEL",
+#         "model": "Vectra C",
+#         "horse_powers": 120,
+#         "is_broken": True,
+#         "problem_description": "flat tire"
+#     }
+#     car = Car(**car_data)
+#     print(car)
