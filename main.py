@@ -23,7 +23,11 @@ def deserialize_car_object(json: bytes) -> Car:
 
 
 if __name__ == "__main__":
-    car_data = {"manufacturer": "Audi", "model": "A4", "horse_powers": 200, "is_broken": True}
+    car_data = {
+        "manufacturer": "Audi",
+        "model": "A4", "horse_powers": 200,
+        "is_broken": True
+    }
 
     print(car_data)
 
